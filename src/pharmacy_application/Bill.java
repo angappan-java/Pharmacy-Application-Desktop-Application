@@ -357,6 +357,11 @@ public class Bill extends javax.swing.JFrame {
         billdetails.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         billdetails.setForeground(new java.awt.Color(102, 0, 0));
         billdetails.setText("BILL DETAILS");
+        billdetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                billdetailsActionPerformed(evt);
+            }
+        });
         getContentPane().add(billdetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(974, 374, 201, -1));
 
         bill.setBackground(new java.awt.Color(0, 102, 102));
@@ -632,6 +637,12 @@ double tot=0;
         }
         }else{JOptionPane.showMessageDialog(this,"GRANDTOTAL, PAID, BALANCE FIELDS ARE REQUIRED FOR PDF GENEARTE..");}
     }//GEN-LAST:event_printActionPerformed
+
+    private void billdetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_billdetailsActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new Billdetails().setVisible(true);
+    }//GEN-LAST:event_billdetailsActionPerformed
 
     /**
      * @param args the command line arguments
